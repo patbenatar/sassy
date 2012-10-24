@@ -1,0 +1,20 @@
+// Usage:
+// * {
+//   @extend %box-sizing;
+// }
+%box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// Usage:
+// nav li {
+//   @include inline_block(middle);
+// }
+@mixin inline_block($vertical_align: top) {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: $vertical_align;
+}

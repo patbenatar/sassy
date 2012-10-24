@@ -1,0 +1,55 @@
+@mixin border_radius($radius: 4) {
+  -webkit-border-radius: #{$radius}px;
+  -moz-border-radius: #{$radius}px;
+  -ms-border-radius: #{$radius}px;
+  -o-border-radius: #{$radius}px;
+  border-radius: #{$radius}px;
+}
+
+@mixin border_top_radius($radius: 4) {
+  @include border_top_left_radius($radius);
+  @include border_top_right_radius($radius);
+}
+
+@mixin border_bottom_radius($radius: 4) {
+  @include border_bottom_left_radius($radius);
+  @include border_bottom_right_radius($radius);
+}
+
+@mixin border_left_radius($radius: 4) {
+  @include border_top_left_radius($radius);
+  @include border_bottom_left_radius($radius);
+}
+
+@mixin border_right_radius($radius: 4) {
+  @include border_top_right_radius($radius);
+  @include border_bottom_right_radius($radius);
+}
+
+@mixin border_top_right_radius($radius: 4) {
+  -webkit-border-top-right-radius: #{$radius}px;
+  -moz-border-radius-topright: #{$radius}px;
+  -ms-border-radius-top-right: #{$radius}px;
+  border-top-right-radius: #{$radius}px;
+}
+
+@mixin border_top_left_radius($radius: 4) {
+  -webkit-border-top-left-radius: #{$radius}px;
+  -moz-border-radius-topleft: #{$radius}px;
+  -ms-border-radius-top-left: #{$radius}px;
+  border-top-left-radius: #{$radius}px;
+}
+
+@mixin border_bottom_right_radius($radius: 4) {
+  -webkit-border-bottom-right-radius: #{$radius}px;
+  -moz-border-radius-bottomright: #{$radius}px;
+  -ms-border-radius-bottom-right: #{$radius}px;
+  border-bottom-right-radius: #{$radius}px;
+}
+
+@mixin border_bottom_left_radius($radius: 4) {
+  -webkit-border-bottom-left-radius: #{$radius}px;
+  -moz-border-radius-bottomleft: #{$radius}px;
+  -ms-border-radius-bottom-left: #{$radius}px;
+  border-bottom-left-radius: #{$radius}px;
+}
