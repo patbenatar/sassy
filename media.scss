@@ -1,3 +1,10 @@
+// Usage:
+// h1 {
+//   font-size: 2em;
+//   @include media(small) {
+//     font-size: 1.5em;
+//   }
+// }
 @mixin media($media) {
   @if $media == full {
     @media only screen and (min-width: 980px) { @content; }
@@ -20,6 +27,11 @@
   }
 }
 
+// Usage:
+// h1.logo {
+//   background: transparent no-repeat left top;
+//   @include hi_res('logo.png', 'logo_2x.png', 100px, 40px);
+// }
 @mixin hi_res($standard, $hi, $width, $height) {
   background-image: image-url($standard);
   @include media(hi_res) {
