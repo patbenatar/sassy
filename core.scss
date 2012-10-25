@@ -10,11 +10,11 @@
 
 // Usage:
 // nav li {
-//   @include inline_block(middle);
+//   @include inline-block(middle);
 // }
-@mixin inline_block($vertical_align: top) {
+@mixin inline-block($vertical-align: top) {
   display: inline-block;
   *display: inline;
   zoom: 1;
-  vertical-align: $vertical_align;
+  vertical-align: $vertical-align;
 }

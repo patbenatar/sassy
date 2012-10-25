@@ -5,21 +5,21 @@
   transition: $properties;
 }
 
-@mixin transition_property($properties) {
+@mixin transition-property($properties) {
   -webkit-transition-property: #{$properties};
   -moz-transition-property: #{$properties};
   -ms-transition-property: #{$properties};
   transition-property: #{$properties};
 }
 
-@mixin transition_duration($duration) {
+@mixin transition-duration($duration) {
   -webkit-transition-duration: $duration;
   -moz-transition-duration: $duration;
   -ms-transition-duration: $duration;
   transition-duration: $duration;
 }
 
-@mixin transition_timing_function($functionName) {
+@mixin transition-timing-function($functionName) {
   -webkit-transition-timing-function: $functionName;
   -moz-transition-timing-function: $functionName;
   -ms-transition-timing-function: $functionName;
