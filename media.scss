@@ -18,7 +18,7 @@
   @else if $media == small {
     @media only screen and (max-width: 500px) { @content; }
   }
-  @else if $media == hi_res {
+  @else if $media == hi-res {
     @media only screen and (min--moz-device-pixel-ratio: 1.3),
       (-o-min-device-pixel-ratio: 2.6/2),
       (-webkit-min-device-pixel-ratio: 1.3),
@@ -27,17 +27,34 @@
   }
 }
 
-// Usage:
+// Note: Requires add-to-end-of-filename sass extension
+// Usage (shown with Rails' image-url() helper):
 // h1.logo {
 //   background: transparent no-repeat left top;
-//   @include hi_res('logo.png', 'logo_2x.png', 100px, 40px);
+//   @include hi-res(image-url('logo.png'), 100px, 40px);
 // }
-@mixin hi_res($standard, $hi, $width, $height) {
-  background-image: image-url($standard);
-  @include media(hi_res) {
-    background-image: image-url($hi);
+@mixin hi-res($image, $width, $height) {
+  background-image: $image;
+  @include media(hi-res) {
+    background-image: add-to-end-of-filename($image, "@2x");
     -webkit-background-size: $width $height;
     background-size: $width $height;
   }
 }
 
+// Legacy version, more verbose interface but doesn't require
+// add-to-end-of-filename sass extension
+// Usage:
+// h1.logo {
+//   background: transparent no-repeat left top;
+//   @include hi-res('logo.png', 'logo_2x.png', 100px, 40px);
+// }
+//
+// @mixin hi-res($standard, $hi, $width, $height) {
+//   background-image: image-url($standard);
+//   @include media(hi-res) {
+//     background-image: image-url($hi);
+//     -webkit-background-size: $width $height;
+//     background-size: $width $height;
+//   }
+// }
